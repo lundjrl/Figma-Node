@@ -1,0 +1,20 @@
+{
+  "name": "Figma-Node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lundjrl/Figma-Node.git",
+  "author": "lundjrl <james.lund@fusionary.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "path": "^0.12.7",
+    "ts-node": "^10.8.2"
+  },
+  "scripts": {
+    "start": "npx ts-node -T ./index.ts"
+  }
+}

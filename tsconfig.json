@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "rootDir": ".",
+    "outDir": "./dist",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "declaration": false,
+    "sourceMap": true,
+    "inlineSources": true,
+    "types": ["node"],
+    "stripInternal": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "importsNotUsedAsValues": "error",
+    "inlineSourceMap": false,
+    "noEmit": false,
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "ts-node": {},
+  "include": ["./src/**/*"],
+  "exclude": ["tsconfig.json", "dist/node_modules"]
+}
