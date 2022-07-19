@@ -32,7 +32,9 @@ const main = async () => {
 
     const typography = figmaNode.filter((child) => child.name === 'Typography');
 
-    const things = colors[0].children.filter((el) => el.type === 'COMPONENT');
+    const things = colors[0].children.filter(
+      (el) => el.type === 'COMPONENT' || el.type === 'FRAME'
+    );
 
     const filteredData = things.filter(
       (el) => !el.name.toLowerCase().includes('gradient')
