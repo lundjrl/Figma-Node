@@ -1,30 +1,33 @@
 export class Color {
-  constructor(data, name) {
+  data: any;
+  name: string;
+  rgba: any;
+  constructor(data: any, name: string) {
     this.data = data;
     this.name = name;
 
-    if (data.fills && data.fills[0].type === 'SOLID') {
-      //   console.log('rgba:', this.name, data.fills[0], data.background[0]);
+    if (data?.fills?.length > 0 && data?.fills[0]?.type === 'SOLID') {
       this.rgba = {
         r: this.rgbToInt(data.fills[0].color.r),
         g: this.rgbToInt(data.fills[0].color.g),
         b: this.rgbToInt(data.fills[0].color.b),
-        a: data.fills[0].opacity,
+        // a: data.fills[0].opacity,
       };
+      console.log('this.rgba:', this.rgba);
     }
   }
 
   get hex() {
-    if (!(this.rgba.r && this.rgba.g && this.rgba.b)) {
+    if (!(this.rgba?.r && this.rgba?.g && this.rgba?.b)) {
       return null;
     }
     return this.rgbToHex(this.rgba.r, this.rgba.g, this.rgba.b);
   }
 
   get cssColor() {
-    // console.log(this.name, this.rgba, this.hex);
-    if (this.rgba && this.rgba.a < 1) {
-      return `rgba(${this.hex}, ${this.rgba.a.toFixed(2)})`;
+    if (this.rgba) {
+      // && this.rgba.a < 1
+      return `rgba(${this.hex})`; //, ${this.rgba.a.toFixed(2)}
     } else {
       return this.hex;
     }
@@ -34,12 +37,11 @@ export class Color {
     return { [this.name]: this.cssColor };
   }
 
-  rgbToInt(value) {
-    // console.log('value:', this.name, value);
+  rgbToInt(value: number) {
     return Number(value * 255).toFixed(0);
   }
 
-  intToHex(int) {
+  intToHex(int: number) {
     let hex = Number(int).toString(16);
     if (hex.length < 2) {
       hex = '0' + hex;
@@ -47,7 +49,7 @@ export class Color {
     return hex;
   }
 
-  rgbToHex(r, g, b) {
+  rgbToHex(r: number, g: number, b: number) {
     const red = this.intToHex(r);
     const green = this.intToHex(g);
     const blue = this.intToHex(b);
