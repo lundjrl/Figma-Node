@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { createDir, createFile } from './src/utils/fileSystemUtil';
-import { Color } from './src/Color';
-import { formatName } from './src/utils/NameUtils';
 import { saveFigmaColors } from './src/utils/SaveColorsUtil';
+import { saveFigmaBaseFontSize } from './src/utils/SaveBaseFontSizeUtil';
 import { saveFigmaTypography } from './src/utils/SaveTypographyUtil';
+
 import 'dotenv/config';
 
 const FIGMA_FILE_ID = process.env.FIGMA_ID;
@@ -33,7 +32,9 @@ const main = async () => {
 
     const figmaNode = result.data.document.children[0].children;
 
-    await saveFigmaTypography(figmaNode, filePath, baseFontSizePath);
+    await saveFigmaBaseFontSize(figmaNode, filePath, baseFontSizePath);
+
+    await saveFigmaTypography(figmaNode, filePath, fontSizesPath);
 
     await saveFigmaColors(figmaNode, filePath, colorFilePath);
   } catch (error) {

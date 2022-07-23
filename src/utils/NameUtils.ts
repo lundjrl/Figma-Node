@@ -1,6 +1,6 @@
 export const formatName = (name: string) => {
   // Remove glypth's
-  const str = name.replace('🎨 ', '');
+  const str = name.replace('🎨 ', '').replace('•', '');
 
   // Separate the words and set the first one to lowercase.
   const strArr = str.split(' ');
