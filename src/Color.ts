@@ -13,7 +13,6 @@ export class Color {
         b: this.rgbToInt(data.fills[0].color.b),
         // a: data.fills[0].opacity,
       };
-      console.log('this.rgba:', this.rgba);
     }
   }
 

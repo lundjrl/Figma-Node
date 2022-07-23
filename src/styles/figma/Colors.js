@@ -1,4 +1,4 @@
-export const Colors = {
+const Colors = {
   'white(top)': 'rgba(#ffffff)',
   'divider(onLight)': 'rgba(#e5e7eb)',
   'divider(onDark)': 'rgba(#1e1e2f)',
@@ -36,3 +36,5 @@ export const Colors = {
   'accentUISection-Background': 'rgba(#cfd7e8)',
   primaryUIBackground: 'rgba(#f1f3f8)',
 };
+
+module.exports = Colors;
