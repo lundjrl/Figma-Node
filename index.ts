@@ -11,12 +11,14 @@ const FIGMA_URL = `https://api.figma.com/v1/files/${FIGMA_FILE_ID}`;
 
 // Get from Figma (body base under typography) later.
 const baseFontValue = 16;
+const outputDir = 'output';
 
-const filePath = '/src/styles/figma';
-const baseFontSizePath = './src/styles/figma/BaseFontSize.js';
-const colorFilePath = './src/styles/figma/Colors.js';
-const componentStylesPath = './src/styles/figma/ComponentStyles.js';
-const fontSizesPath = './src/styles/figma/FontSizes.js';
+const filePath = `/${outputDir}/src/styles/figma`;
+const baseFontSizePath = `./src/styles/figma/BaseFontSize.js`;
+const colorFilePath = `./${outputDir}/src/styles/figma/Colors.js`;
+const componentStylesPath = `./${outputDir}/src/styles/figma/ComponentStyles.js`;
+const fontSizesPath = `./${outputDir}/src/styles/figma/FontSizes.js`;
+const tailwindConfigPath = `./${outputDir}/tailwind.config.js`;
 
 const main = async () => {
   const options = {

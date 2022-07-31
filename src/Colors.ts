@@ -25,8 +25,7 @@ export class Color {
 
   get cssColor() {
     if (this.rgba) {
-      // && this.rgba.a < 1
-      return `rgba(${this.hex})`; //, ${this.rgba.a.toFixed(2)}
+      return `${this.hex}`;
     } else {
       return this.hex;
     }
